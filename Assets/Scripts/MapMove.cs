@@ -16,7 +16,6 @@ public class MapMove : MonoBehaviour
     {
         mapPosition.x = GetComponent<RectTransform>().anchoredPosition.x;
         mapPosition.y = GetComponent<RectTransform>().anchoredPosition.y;
-        Debug.Log(GetComponent<RectTransform>().anchoredPosition.y);
         transform.Translate(Vector2.down, Space.World);
         if (mapPosition.y <= -Screen.height)
         {

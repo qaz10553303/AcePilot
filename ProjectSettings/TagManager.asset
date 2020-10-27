@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerFirePos
+  - PlayerBullet
+  - Boss
+  - PlayerUpgradedBullet
+  - Gem
+  - Enemy
+  - EnemyBullet
+  - BossBullet
+  - Missle
+  - Items
+  - EnemyBulletList
+  - PlayerBulletList
+  - Canvas
+  - RebornPos
+  - GameOverScreen
   layers:
   - Default
   - TransparentFX

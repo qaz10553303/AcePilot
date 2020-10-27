@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     // Start is called before the first frame update
+    private float timer;
+    private bool menuReady;
+    private bool GameStateReady;
+    private bool InstructionsReady;
+
     void Start()
     {
         
@@ -14,21 +19,48 @@ public class SceneLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        if (menuReady == true)
+        {
+            if (timer > 0.28)
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
+        if (GameStateReady == true)
+        {
+            if (timer > 0.28)
+            {
+                SceneManager.LoadScene(1);
+            }
+        }
+        if (InstructionsReady == true)
+        {
+            if (timer > 0.28)
+            {
+                SceneManager.LoadScene(2);
+            }
+        }
     }
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+        timer = 0;
+        menuReady = true;
     }
 
     public void LoadGameState()
     {
-        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+        timer = 0;
+        GameStateReady = true;
     }
 
     public void LoadInstructions()
     {
-        SceneManager.LoadScene(2);
+        Time.timeScale = 1;
+        timer = 0;
+        InstructionsReady = true;
     }
 }
